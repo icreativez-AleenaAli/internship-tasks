@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>HTML to JSX Converter | React Playground</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="converter-header">
+      <div class="brand">
+        <span class="brand-icon">⚛️ ➡️ 🧩</span>
+        <h1>HTML to JSX <span class="highlight">Converter</span></h1>
+      </div>
+      <p class="subtitle">Transform standard HTML into React-compatible JSX syntax instantly — class→className, inline styles, self-closing tags & more</p>
+    </header>
+
+    <main class="converter-main">
+      <div class="editor-panel">
+        <div class="panel-header">
+          <span class="panel-label">📄 HTML Input</span>
+          <div class="panel-actions">
+            <button id="clearHtmlBtn" class="icon-btn" title="Clear HTML editor">🗑️ Clear</button>
+            <button id="exampleBtn" class="icon-btn" title="Load example">📋 Example</button>
+          </div>
+        </div>
+        <div class="textarea-wrapper">
+          <textarea id="htmlInput" placeholder='<div class="container">\n  <h1>Hello World</h1>\n  <button onclick="alert(\'Hi\')">Click</button>\n</div>' spellcheck="false"></textarea>
+        </div>
+      </div>
+
+      <div class="conversion-actions">
+        <button id="convertBtn" class="convert-primary">✨ Convert to JSX</button>
+        <div class="status-badge">
+          <span id="statusMsg" class="status-idle">Ready • Auto-className & camelCase events</span>
+        </div>
+      </div>
+
+      <div class="editor-panel">
+        <div class="panel-header">
+          <span class="panel-label">⚛️ JSX Output</span>
+          <div class="panel-actions">
+            <button id="copyBtn" class="icon-btn" title="Copy JSX to clipboard">📋 Copy</button>
+            <button id="clearOutputBtn" class="icon-btn" title="Clear output">🗑️ Clear</button>
+          </div>
+        </div>
+        <div class="code-output-wrapper">
+          <pre><code id="jsxOutput" class="language-jsx">// Your converted JSX will appear here...</code></pre>
+        </div>
+      </div>
+    </main>
+
+    <footer class="converter-footer">
+      <div class="footer-note">
+        <span>🔧 Converts: <strong>class</strong> → <strong>className</strong> · <strong>for</strong> → <strong>htmlFor</strong> · inline styles (style="...") → style={{...}} · camelCase events · self-closing tags · removes comments · boolean attributes fixed.</span>
+      </div>
+    </footer>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="converter.js"></script>
+</body>
+</html>
